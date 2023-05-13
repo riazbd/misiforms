@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.tiny.cloud/1/hugai0lsihziyi558myc52ql4uje0k71agnw31g2pspa69ap/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+
+<style>
+  .container {
+    margin: 50px auto;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <h2>Patient Form</h2>
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="patient-source">Select patient source:</label>
+            <select class="form-control" id="patient-source">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="first-name">First Name:</label>
+            <input type="text" class="form-control" id="first-name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <input type="text" class="form-control" id="last-name">
+          </div>
+          <div class="form-group">
+            <label for="phone-number">Phone Number:</label>
+            <input type="text" class="form-control" id="phone-number">
+          </div>
+          <div class="form-group">
+            <label for="alt-phone-number">Alternative Phone Number:</label>
+            <input type="text" class="form-control" id="alt-phone-number">
+          </div>
+          <div class="form-group">
+            <label for="blood-group">Blood group:</label>
+            <select class="form-control" id="blood-group">
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="country">Country:</label>
+            <select class="form-control" id="country">
+              <option>Country 1</option>
+              <option>Country 2</option>
+              <option>Country 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="insurance-number">Insurance Number:</label>
+            <input type="text" class="form-control" id="insurance-number">
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" class="form-control" id="dob">
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" id="age">
+          </div>
+          <div class="form-group">
+            <label for="marital-status">Marital Status:</label>
+            <select class="form-control" id="marital-status">
+              <option>Single</option>
+              <option>Married</option>
+              <option>Divorced</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="occupation">Occupation:</label>
+            <select class="form-control" id="occupation">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="residential-address">Residential Address:</label>
+            <textarea class="form-control" id="residential-address" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="city-state">City/State:</label>
+            <select class="form-control" id="city-state">
+              <option>City/State 1</option>
+              <option>City/State 2</option>
+              <option>City/State 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="area">Area:</label>
+            <input type="text" class="form-control" id="area">
+          </div>
+          <div class="form-group">
+            <label for="dob-number">DOB Number:</label>
+            <input type="text" class="form-control" id="dob-number">
+          </div>
+          <div class="form-group">
+            <label for="bsn-number">BSN Number:</label>
+            <input type="text" class="form-control" id="bsn-number">
+          </div>
+          <div class="form-group">
+            <label for="medical-history">Medical History:</label>
+            <textarea class="form-control" id="medical-history" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="file-type">File Type:</label>
+            <select class="form-control" id="file-type">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="file">File:</label>
+            <input type="file" class="form-control-file" id="file">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <h2>Ticket Form</h2>
+    <form>
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="select-department">Select Department:</label>
+            <select class="form-control" id="select-department">
+              <option>Department 1</option>
+              <option>Department 2</option>
+              <option>Department 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mono-multi-zd">Mono/Multi ZD:</label>
+            <input type="text" class="form-control" id="mono-multi-zd">
+          </div>
+          <div class="form-group">
+            <label for="mono-multi-screening">Mono/Multi Screening:</label>
+            <input type="text" class="form-control" id="mono-multi-screening">
+          </div>
+          <div class="form-group">
+            <label for="intakes-therapist">Intakes/Therapist:</label>
+            <input type="text" class="form-control" id="intakes-therapist">
+          </div>
+          <div class="form-group">
+            <label for="tresonit-number">Tresonit Number:</label>
+            <input type="text" class="form-control" id="tresonit-number">
+          </div>
+          <div class="form-group">
+            <label for="datum-intake">Datum Intake:</label>
+            <input type="text" class="form-control" id="datum-intake">
+          </div>
+          <div class="form-group">
+            <label for="datuem-intake-2">Datuem Intake 2:</label>
+            <input type="text" class="form-control" id="datuem-intake-2">
+          </div>
+          <div class="form-group">
+            <label for="nd-account">ND Account:</label>
+            <input type="text" class="form-control" id="nd-account">
+          </div>
+          <div class="form-group">
+            <label for="avc-alfmvm-sbg">AvC/AlfmVm/SBG:</label>
+            <input type="text" class="form-control" id="avc-alfmvm-sbg">
+          </div>
+          <div class="form-group">
+            <label for="berha-intake">Berha Intake:</label>
+            <input type="text" class="form-control" id="berha-intake">
+          </div>
+          <div class="form-group">
+            <label for="strike-history">Strike History:</label>
+            <textarea class="form-control" id="strike-history" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ticket-history">Ticket History:</label>
+            <textarea class="form-control" id="ticket-history" rows="3"></textarea>
+          </div>
+        </div>
+        <!-- Second Column -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="rom-start">ROM Start:</label>
+            <input type="date" class="form-control" id="rom-start">
+          </div>
+          <div class="form-group">
+            <label for="rom-end">ROM End:</label>
+            <input type="date" class="form-control" id="rom-end">
+          </div>
+          <div class="form-group">
+            <label for="berha-eind">Berha Eind:</label>
+            <input type="date" class="form-control" id="berha-eind">
+          </div>
+          <div class="form-group">
+            <label for="vtcb-date">VTCB Date:</label>
+            <input type="date" class="form-control" id="vtcb-date">
+          </div>
+          <div class="form-group">
+            <label for="closure">Closure:</label>
+            <input type="date" class="form-control" id="closure">
+          </div>
+          <div class="form-group">
+            <label for="aanm-intake">Aanm-intake 1 (dagentussen):</label>
+            <input type="date" class="form-control" id="aanm-intake">
+          </div>
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <select class="form-control" id="location">
+              <option>Location 1</option>
+              <option>Location 2</option>
+              <option>Location 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="call-strike">Call Strike:</label>
+            <select class="form-control" id="call-strike">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="remarks">Remarks:</label>
+            <input type="text" class="form-control" id="remarks">
+          </div>
+          <div class="form-group">
+            <label for="comments">Comments:</label>
+            <input type="text" class="form-control" id="comments">
+          </div>
+          <div class="form-group">
+            <label for="language-treatment">Language Treatment:</label>
+            <select class="form-control" id="language-treatment">
+              <option>Language 1</option>
+              <option>Language 2</option>
+              <option>Language 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="file">File:</label>
+            <input type="file" class="form-control-file" id="file">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    
+    <br>
+    <br>
+    <br>
+
+    <h2>Schedule Form</h2>
+    <form>
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="therapist-id">Therapist ID:</label>
+            <select class="form-control" id="therapist-id">
+              <option>Therapist 1</option>
+              <option>Therapist 2</option>
+              <option>Therapist 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+          <div class="form-group">
+            <label for="start-time">Start Time:</label>
+            <input type="time" class="form-control" id="start-time">
+          </div>
+          <div class="form-group">
+            <label for="end-time">End Time:</label>
+            <input type="time" class="form-control" id="end-time">
+          </div>
+          <div class="form-group">
+            <label for="schedule-type">Schedule Type:</label>
+            <select class="form-control" id="schedule-type">
+              <option>Leave</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    
+    <br>
+    <br>
+    <br>
+
+    <h2>Appointment Form</h2>
+    <form>
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="select-patient">Select Patient:</label>
+            <select class="form-control" id="select-patient">
+              <option>Patient 1</option>
+              <option>Patient 2</option>
+              <option>Patient 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="select-therapist">Select Therapist:</label>
+            <select class="form-control" id="select-therapist">
+              <option>Therapist 1</option>
+              <option>Therapist 2</option>
+              <option>Therapist 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appointment-date">Appointment Date:</label>
+            <select class="form-control" id="appointment-date">
+              <option>Date 1</option>
+              <option>Date 2</option>
+              <option>Date 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appointment-time">Appointment Time:</label>
+            <select class="form-control" id="appointment-time">
+              <option>Time 1</option>
+              <option>Time 2</option>
+              <option>Time 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appointment-fee">Appointment Fee:</label>
+            <input type="text" class="form-control" id="appointment-fee">
+          </div>
+          <div class="form-group">
+            <label for="language">Language:</label>
+            <select class="form-control" id="language">
+              <option>Language 1</option>
+              <option>Language 2</option>
+              <option>Language 3</option>
+            </select>
+          </div>
+        </div>
+        <!-- Second Column -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="remarks">Remarks:</label>
+            <input type="text" class="form-control" id="remarks">
+          </div>
+          <div class="form-group">
+            <label for="select-status">Select Status:</label>
+            <select class="form-control" id="select-status">
+              <option>Status 1</option>
+              <option>Status 2</option>
+              <option>Status 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appointment-type">Appointment Type:</label>
+            <select class="form-control" id="appointment-type">
+              <option>Type 1</option>
+              <option>Type 2</option>
+              <option>Type 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="payment-method">Payment Method:</label>
+            <select class="form-control" id="payment-method">
+              <option>Method 1</option>
+              <option>Method 2</option>
+              <option>Method 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="therapist-comment">Therapist Comment:</label>
+            <input type="text" class="form-control" id="therapist-comment">
+          </div>
+          <div class="form-group">
+            <label for="appointment-history">Appointment History:</label>
+            <textarea class="form-control" id="appointment-history" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#intakeModal">
+      Open Intake Form
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="intakeModal" tabindex="-1" role="dialog" aria-labelledby="intakeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="intakeModalLabel">Intake Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="number-of-intakes">Number of Intakes:</label>
+                <input type="number" class="form-control" id="number-of-intakes">
+              </div>
+              <div id="intake-date-fields"></div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <h2>Email Template Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="mail-type">Select Mail Type:</label>
+        <select class="form-control" id="mail-type">
+          <option value="">Select...</option>
+          <option value="type1">Type 1</option>
+          <option value="type2">Type 2</option>
+          <option value="type3">Type 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email-subject">Email Subject:</label>
+        <input type="text" class="form-control" id="email-subject">
+      </div>
+      <div class="form-group">
+        <label for="email-body">Email Body:</label>
+        <textarea class="form-control" id="email-body"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      // Function to dynamically generate intake date fields
+      function generateIntakeDateFields() {
+        var numberOfIntakes = parseInt($('#number-of-intakes').val());
+        var intakeDateFields = '';
+
+        for (var i = 1; i <= numberOfIntakes; i++) {
+          intakeDateFields += `
+            <div class="form-group">
+              <label for="intake-date-${i}">Intake Date ${i}:</label>
+              <input type="date" class="form-control" id="intake-date-${i}">
+            </div>
+          `;
+        }
+
+        $('#intake-date-fields').html(intakeDateFields);
+      }
+
+      // Event listener for number of intakes field
+      $('#number-of-intakes').on('input', generateIntakeDateFields);
+    });
+
+tinymce.init({
+      selector: '#email-body',
+      height: 300,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+      toolbar: 'undo redo | formatselect | bold italic backcolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | removeformat | help'
+    });
+  </script>
+
+</body>
+
+</html>
